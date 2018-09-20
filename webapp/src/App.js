@@ -16,12 +16,19 @@ class App extends Component {
       nextId: this.state.nextId + 1
      })
   }
+  deleteTodo = (id) => {
+    this.setState({
+      todos: this.state.todos.filter(todo => {
+        return todo.id !== id;
+      })
+    })
+  }
   render() {
     return (
       <React.Fragment>
         <div>TodoApp</div>
-        <AddTodo addTodo={this.addTodo}/>
-        <List todos={this.state.todos}/>
+        <AddTodo addTodo={this.addTodo} />
+        <List todos={this.state.todos} deleteTodo={this.deleteTodo} />
       </React.Fragment>
     );
   }

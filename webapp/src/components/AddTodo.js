@@ -15,6 +15,7 @@ class AddTodo extends Component {
   	event.preventDefault();
   	this.props.addTodo(this.state.title)
   	this.setState({title: ""});
+  	console.log(this.props)
   }
 
   render() {
