@@ -8,7 +8,7 @@ class List extends Component {
   render() {
   	const list = this.props.todos.map(todo => {
   		return(
-  			<li>
+  			<li key={todo.id}>
   				#{todo.id} {todo.title} <button onClick={() => {this.props.deleteTodo(todo.id)}}>DELETE</button>
   			</li>
   		)
