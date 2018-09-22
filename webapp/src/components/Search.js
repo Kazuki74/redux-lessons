@@ -15,7 +15,6 @@ class Search extends Component {
   	event.preventDefault();
   	this.props.search(this.state.title)
   	this.setState({title: ""});
-  	console.log(this.props)
   }
 
   render() {

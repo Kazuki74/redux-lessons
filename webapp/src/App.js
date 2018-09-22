@@ -13,7 +13,7 @@ class App extends Component {
   fetchGiphyApi = (terget) => {
     const query = terget;
     const key = "LARVnBHiwkJAJhZevDhFimwLgw00m7rJ";
-    const limit = "5"
+    const limit = "100"
 
     const url = `http://api.giphy.com/v1/gifs/search?q=${query}&api_key=${key}&limit=${limit}`
 
@@ -27,18 +27,17 @@ class App extends Component {
   renderImageList = (list) => {
     const imageList = list.map((url,index) => {
       return(
-        <li key={index}>
-          <img src={url} alt="gif" />
+        <li className="item" key={index}>
+          <img className="image" src={url} alt="gif" />
         </li>
       )
     })
-    return <ul>{imageList}</ul>
+    return <ul className="list">{imageList}</ul>
   }
   render() {
     return (
       <div className="App">
         <Search search={this.fetchGiphyApi}/>
-        <h1 className="App-title" onClick={this.fetchGiphyApi} >Welcome to React</h1>
         <div>{this.renderImageList(this.state.gifUrllist)}</div>
       </div>
     );
