@@ -1,4 +1,4 @@
-const reducer = (state = 0, action) => {
+const number = (state = 0, action) => {
 	switch (action.type) {
 		case "PLUS":
 			console.log(action)
@@ -10,4 +10,4 @@ const reducer = (state = 0, action) => {
 	}
 }
 
-export default reducer
+export default number
