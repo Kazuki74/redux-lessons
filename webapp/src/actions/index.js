@@ -11,3 +11,11 @@ export const minus = num => {
 		payload: { num : num }
 	}
 }
+
+export const asyncMinus = num => {
+	return dispatch => {
+		setTimeout( () => {
+			dispatch({ type:"MINUS", payload: { num : num } })
+		}, 2000)
+	}
+}
