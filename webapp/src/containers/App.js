@@ -1,7 +1,7 @@
 import App from "../components/App"
 import { connect } from "react-redux";
 // indexであれば明示しなくてよい
-import { plus, minus, asyncMinus } from "../actions"
+import { plus, minus, asyncMinus, getJson } from "../actions"
 
 const mapStateToProps = (state) => {
   return {
@@ -21,6 +21,9 @@ const mapDispatchToProps = (dispatch) => {
     },
     asyncMinus: (num) => {
       dispatch(asyncMinus(num))
+    },
+    getJson: () => {
+      dispatch(getJson())
     }
   }
 }
