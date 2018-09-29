@@ -8,22 +8,23 @@ class Search extends Component {
 
   handleChange = (event) => {
   	const title = event.target.value
-  	this.setState({ title: title })
+  	this.setState({ title: title });
   }
 
   handleSubmit = (event) => {
+    const { getUrls } = this.props;
   	event.preventDefault();
-  	this.props.search(this.state.title)
+  	getUrls(this.state.title)
   	this.setState({title: ""});
   }
 
   render() {
+    console.log(this.props)
     return (
     	<div>
-    		<h2>Find Your Gif</h2>
     		<form onSubmit={this.handleSubmit} >
     			<input type="text" value={this.state.title} onChange={this.handleChange} />
-    			<input type="submit" value="Search" />
+    			<input type="submit" value={this.props.buttonText} />
     		</form>
     	</div>
     );
